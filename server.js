@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const port = 3000;
+const moment          = require ( 'moment' );
+const morgan          = require ( 'morgan' );
 
 // MIDDLEWARE
 app.use(express.static('public'));
@@ -9,6 +11,7 @@ app.use(express.json());
 
 const songsController = require('./controllers/songs.js');
 app.use('/songs', songsController);
+app.use ( morgan ( 'tiny' ) );
 
 
 
