@@ -7,6 +7,18 @@
     <script src="/js/app.js" charset="utf-8"></script>
 </head>
 <body ng-controller="mainController as ctrl">
-    {{ 2+ 2 }}
+
+    <form>
+        <label for="song">Song:</label><br>
+        <input type="text" ng-model="ctrl.song"><br>
+
+        <label for="album">Album:</label><br>
+        <input type="text" ng-model="ctrl.albumn"></br>
+
+        <label for="cover">Art:</label><br>
+        <input type="text" ng-model="ctrl.cover"></br>
+
+        <button type="submit">Add New Song</button>
+    </form>
 </body>
 </html>
