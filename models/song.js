@@ -6,6 +6,6 @@ const songSchema = new mongoose.Schema({
     cover: String
 });
 
-const Songs = mongoose.model ('Song' , songSchema);
+const Songs = mongoose.model('Song' , songSchema);
 module.exports = Songs;
 //something
