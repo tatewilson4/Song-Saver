@@ -4,17 +4,13 @@ const mongoose = require('mongoose');
 const port = 3000;
 
 // MIDDLEWARE
-app.use(express.static('public'));
 app.use(express.json());
+app.use(express.static('public'));
+
 
 const songsController = require('./controllers/songs.js');
 app.use('/songs', songsController);
 
-
-
-app.get('/', (req,res)=>{
-    res.send('Hello World');
-});
 
 
 
