@@ -7,6 +7,24 @@
     <script src="/js/app.js" charset="utf-8"></script>
 </head>
 <body ng-controller="mainController as ctrl">
-    {{ 2+ 2 }}
+
+    <form ng-submit="ctrl.createSong()">
+        <label for="song">Song:</label><br>
+        <input type="text" ng-model="ctrl.formData.title"><br>
+
+        <label for="album">Album:</label><br>
+        <input type="text" ng-model="ctrl.formData.albumn"></br>
+
+        <label for="cover">Art:</label><br>
+        <input type="text" ng-model="ctrl.formData.cover"></br>
+
+        <button type="submit">Add New Song</button>
+    </form>
+
+    <div ng-repeat="song in ctrl.songs" class="songs-container">
+        <h4>{{ song.title }}</h4>
+        <img ng-src="{{ song.cover }}">
+        <h5>{{ song.albumn }}</h5>
+    </div>
 </body>
 </html>

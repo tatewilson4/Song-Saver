@@ -6,18 +6,14 @@ const moment          = require ( 'moment' );
 const morgan          = require ( 'morgan' );
 
 // MIDDLEWARE
-app.use(express.static('public'));
 app.use(express.json());
+app.use(express.static('public'));
+
 
 const songsController = require('./controllers/songs.js');
 app.use('/songs', songsController);
 app.use ( morgan ( 'tiny' ) );
 
-
-
-app.get('/', (req,res)=>{
-    res.send('Hello World');
-});
 
 
 
