@@ -27,9 +27,9 @@
         <button ng-click="ctrl.deleteSong(song)">Delete This Song</button>
         <a href="#" ng-click="(ctrl.indexOfEditFormToShow === $index) ? ctrl.indexOfEditFormToShow = null : ctrl.indexOfEditFormToShow = $index">Edit This Song</a>
         <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editSong(song)">
-            <input type="text" ng-model="ctrl.updatedSong" placeholder="song">
+            <input type="text" ng-model="ctrl.updatedTitle" placeholder="song">
             <input type="text" ng-model="ctrl.updatedAlbumn" placeholder="albumn">
-            <input type="text" ng-model="ctrl.updateCover" placeholder="Cover Photo">
+            <input type="text" ng-model="ctrl.updatedCover" placeholder="Cover Photo">
             <input type="submit" value="Update Song">
         </form>
     </div>
