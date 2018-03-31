@@ -41,9 +41,9 @@ app.controller('mainController' , ['$http', function($http){
         method: 'PUT',
         url: '/songs/' + song._id,
         data: {
-            song: this.updateTitle,
-            albumn: this.updateAlbumn,
-            cover: this.updateCover
+            title: this.updatedTitle,
+            albumn: this.updatedAlbumn,
+            cover: this.updatedCover
         }
     }).then( response => {
         this.getSongs();
