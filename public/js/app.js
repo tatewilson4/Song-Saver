@@ -2,6 +2,8 @@ const app = angular.module('songs', []);
 
 app.controller('mainController' , ['$http', function($http){
 
+    this.indexOfEditFormToShow = null;
+    
     // empty array to store songs in
     this.songs = [];
 
@@ -33,6 +35,34 @@ app.controller('mainController' , ['$http', function($http){
             console.error(error);
         }).catch(err => console.error('Catch ', err))
     } // end getSongs();
+    
+    this.editSongs = ( song ) => {
+    $http({
+        method: 'PUT',
+        url: '/songs/' + song._id,
+        data: {
+            song: this.song,
+            albumn: this.albumn,
+            cover: this.cover
+        }
+    }).then( response => {
+        this.getSongs();
+    }, error => {
+        console.log( error );
+    });
+}
+
+this.deleteSong = ( song ) => {
+    $http({
+        method: 'DELETE',
+        url: '/songs/' + song._id
+    }).then( response => {
+        controller.getSongs();
+    }, error => {
+        console.log( error );
+    });
+}
 
 this.getSongs(); // <---- load immediately on page load
 }]); // end mainController
+
